@@ -14,6 +14,7 @@ class ImageDisplayTableViewController: UITableViewController, UIImagePickerContr
     
     let imagePicker = UIImagePickerController()
     
+    // MARK:- Adding Images Methods
     @IBAction func addImageButtonTapped(_ sender: UIBarButtonItem) {
         
         let alert = UIAlertController(title: "Choose Image Source", message: "", preferredStyle: .actionSheet)
@@ -41,13 +42,25 @@ class ImageDisplayTableViewController: UITableViewController, UIImagePickerContr
         present(alert, animated: true, completion: nil)
     }
     
+    // MARK:- Configuring Image Picking
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let selectedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
+            imagesGallery.append(selectedImage)
+            tableView.reloadData()
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    // MARK:- Loading Methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
         imagePicker.delegate = self
         
-        imagePicker.allowsEditing = false
+        imagePicker.allowsEditing = true
         
         
         
@@ -63,16 +76,7 @@ class ImageDisplayTableViewController: UITableViewController, UIImagePickerContr
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK:- Configuring Image Picking
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            imagesGallery.append(selectedImage)
-            tableView.reloadData()
-        }
-        
-        dismiss(animated: true, completion: nil)
-    }
+
     
     
     // MARK: - TableView DataSource Methods
