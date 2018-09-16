@@ -12,6 +12,7 @@
 		1A13814B214EC8A3005C1C24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A13814A214EC8A3005C1C24 /* Assets.xcassets */; };
 		1A13814E214EC8A3005C1C24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A13814C214EC8A3005C1C24 /* LaunchScreen.storyboard */; };
 		1A138156214EC8FB005C1C24 /* ImageDisplayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A138155214EC8FB005C1C24 /* ImageDisplayTableViewController.swift */; };
+		1A13815A214ED663005C1C24 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A138159214ED663005C1C24 /* ImageTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		1A13814D214EC8A3005C1C24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A13814F214EC8A3005C1C24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A138155214EC8FB005C1C24 /* ImageDisplayTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDisplayTableViewController.swift; sourceTree = "<group>"; };
+		1A138159214ED663005C1C24 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 			children = (
 				1A138143214EC8A3005C1C24 /* AppDelegate.swift */,
 				1A138155214EC8FB005C1C24 /* ImageDisplayTableViewController.swift */,
+				1A138159214ED663005C1C24 /* ImageTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A13815A214ED663005C1C24 /* ImageTableViewCell.swift in Sources */,
 				1A138156214EC8FB005C1C24 /* ImageDisplayTableViewController.swift in Sources */,
 				1A138144214EC8A3005C1C24 /* AppDelegate.swift in Sources */,
 			);

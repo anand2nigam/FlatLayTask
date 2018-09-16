@@ -47,7 +47,9 @@ class ImageDisplayTableViewController: UITableViewController, UIImagePickerContr
 
         imagePicker.delegate = self
         
-        imagePicker.allowsEditing = true
+        imagePicker.allowsEditing = false
+        
+        
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -61,18 +63,34 @@ class ImageDisplayTableViewController: UITableViewController, UIImagePickerContr
         // Dispose of any resources that can be recreated.
     }
 
+    // MARK:- Configuring Image Picking
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imagesGallery.append(selectedImage)
+            tableView.reloadData()
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
     // MARK: - TableView DataSource Methods
 
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return imagesGallery.count
-//    }
-//    
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "imageCell", for: indexPath)
-//        
-//        
-//        
-//    }
-//   
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return imagesGallery.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "imageCell", for: indexPath) as! ImageTableViewCell
+        
+        cell.selectedImageView.image = imagesGallery[indexPath.row]
+        
+        return cell
+    }
+   
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 160.0
+    }
 
 }
