@@ -62,6 +62,7 @@ class ImageDisplayTableViewController: UITableViewController, UIImagePickerContr
         
         imagePicker.allowsEditing = true
         
+       
         
         
         // Uncomment the following line to preserve selection between presentations
@@ -89,6 +90,7 @@ class ImageDisplayTableViewController: UITableViewController, UIImagePickerContr
         let cell = tableView.dequeueReusableCell(withIdentifier: "imageCell", for: indexPath) as! ImageTableViewCell
         
         cell.selectedImageView.image = imagesGallery[indexPath.row]
+         tableView.separatorStyle = .singleLine
         
         return cell
     }
